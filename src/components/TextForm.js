@@ -31,9 +31,10 @@ const TextForm = (props) => {
       <div style={{ color: props.mode==='light'?'black':'white'}}>
         <div className="mb-3" 
             onChange={(event) => handleOnChange(event)}>
-          <label htmlFor="Text" className="form-label">
+          <h1><label htmlFor="Text" className="form-label">
             {props.heading}
           </label>
+          </h1>
           <textarea
             className="form-control"
             value={text}
@@ -60,7 +61,7 @@ const TextForm = (props) => {
         <p>Number of words:{text.split(" ").filter((element)=>{return element.length!==0}).length}</p>
         <p>Number of character:{text.length}</p>
         <h1>Preview</h1>
-        <p>{text.length>0?text:"Enter Data to preview"}</p>
+        <p>{text.length>0?text:"Nothing to preview"}</p>
       </div>
     </>
   );
