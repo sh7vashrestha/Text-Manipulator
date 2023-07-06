@@ -58,7 +58,7 @@ const TextForm = (props) => {
       </div>
       <div className="container mb-3" style={{ color: props.mode==='light'?'black':'white'}}>
         <h1 className="mt-5">Text Summary</h1>
-        <p>Number of words:{text.split(" ").filter((element)=>{return element.length!==0}).length}</p>
+        <p>Number of words:{text.split(/\s+/).filter((element)=>{return element.length!==0}).length}</p>
         <p>Number of character:{text.length}</p>
         <h1>Preview</h1>
         <p>{text.length>0?text:"Nothing to preview"}</p>
