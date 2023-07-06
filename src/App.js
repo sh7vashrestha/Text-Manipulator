@@ -1,10 +1,10 @@
 import { useState } from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import NavBar from "./components/NavBar";
 import TextForm from "./components/TextForm";
-// import About from "./components/About";
+import About from "./components/About";
 import Alert from "./components/Alert";
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
 
   return (
     <>
-      {/* <Router> */}
+      <Router>
         <NavBar
           title="Text Conversion"
           aboutText="About Me"
@@ -45,8 +45,8 @@ function App() {
         />
         <Alert alert={alert} />
         <div className="container">
-          {/* <Routes> */}
-            {/* <Route
+          <Routes>
+            <Route
               exact
               path="/"
               element={
@@ -56,16 +56,12 @@ function App() {
                   mode={mode}
                 />
               }
-            /> */}
-            <TextForm
-                  heading="Enter the text"
-                  showAlert={showAlert}
-                  mode={mode} />
+            />
 
-            {/* <Route exact path="/about" element={<About />} />
-          </Routes> */}
+            <Route exact path="/about" element={<About mode={mode}/>} />
+          </Routes>
         </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }
