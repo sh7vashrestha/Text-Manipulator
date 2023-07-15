@@ -47,8 +47,17 @@ function App() {
         <div className="container">
           <Routes>
             <Route
-              exact
               path="/"
+              element={
+                <TextForm
+                  heading="Enter the text"
+                  showAlert={showAlert}
+                  mode={mode}
+                />
+              }
+            />
+            <Route
+              path="/Text-Manipulator/"
               element={
                 <TextForm
                   heading="Enter the text"
